@@ -1,8 +1,14 @@
 package javaIO;
 
-public class middleEle
+public class middleEle<T>
 {
-	public static <T>void search(T[]arr)
+	private T[]arr;
+	
+	public middleEle(T[]arr)
+	{
+		this.arr=arr;
+	}
+	public <T>void search()
 	{
 		int l=arr.length;
 		if(l%2==0)
@@ -24,11 +30,13 @@ public class middleEle
 	public static void main(String[] args)
 	{
 		Integer []numbers= {11,22,33,44,55,66};
+		middleEle<Integer> m1=new middleEle(numbers);
 		System.out.println("middle element is:");
-		 middleEle.search(numbers);
+		 m1.search();
 
 		 String[]fruits= {"apple","mango","grapes"};
-		 middleEle.search(fruits);
+		 middleEle<Integer> m2=new middleEle(fruits);
+		 m2.search();
 	}
 
 }
